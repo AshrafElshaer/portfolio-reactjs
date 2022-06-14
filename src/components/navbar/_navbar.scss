@@ -1,0 +1,172 @@
+.nav {
+    position: sticky;
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    @include breakpoint-md {
+        padding-block: 1rem;
+    }
+
+    &__brand {
+        &--link {
+            font-size: 1.3rem;
+            font-weight: $fw-bold;
+            color: $clr-blue;
+            padding: 1rem;
+            
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        position: absolute;
+        top: 9rem;
+        right: 0;
+        transform: translateX(14rem);
+        transition: transform 0.5s ease-in-out;
+
+
+        &::before {
+            content: '';
+            width: 250%;
+            height: 175%;
+            position: absolute;
+            top: -4rem;
+            right: -5rem;
+            background-color: #5240F8;
+            z-index: -1;
+            border-bottom-left-radius: 50%;
+            border-top-left-radius: 50%;
+            transition: width height 0.2s ease-in-out;
+        }
+
+        &.active {
+            transform: translateX(0);
+        }
+
+
+
+        @include breakpoint-md {
+            all: unset;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+
+            &::before {
+                all: unset;
+            }
+        }
+
+    }
+
+    &__list {
+        &:hover {
+            .navbar__list--link::before {
+                width: 100%;
+            }
+        }
+
+        &--link {
+            color: $clr-white;
+            font-size: 1.3rem;
+            position: relative;
+            transition: color 0.3s ease-in-out;
+
+            &::before {
+                content: '';
+                width: 0;
+                height: 0.3rem;
+                border-radius: 5px;
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                opacity: 0.75;
+                background-color: $clr-blue;
+                transition: width 0.3s ease-in-out;
+
+            }
+
+            @include breakpoint-md {
+                color: $clr-dark;
+
+                &:hover {
+                    color: $clr-blue;
+                }
+            }
+        }
+    }
+
+    &__toggle {
+        z-index: 999;
+
+        @include breakpoint-md {
+            display: none;
+        }
+
+        .ham {
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: transform 400ms;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .hamRotate.active {
+            transform: rotate(45deg);
+        }
+
+        .hamRotate180.active {
+            transform: rotate(180deg);
+        }
+
+        .line {
+            fill: none;
+            transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+            stroke: $clr-blue;
+            stroke-width: 5.5;
+            stroke-linecap: round;
+        }
+
+        .ham3 .top {
+            stroke-dasharray: 40 130;
+        }
+
+        .ham3 .middle {
+            stroke-dasharray: 40 140;
+        }
+
+        .ham3 .bottom {
+            stroke-dasharray: 40 205;
+        }
+
+        .ham3.active .top {
+            stroke-dasharray: 75 130;
+            stroke-dashoffset: -63px;
+        }
+
+        .ham3.active .middle {
+            stroke-dashoffset: -102px;
+        }
+
+        .ham3.active .bottom {
+            stroke-dasharray: 110 205;
+            stroke-dashoffset: -86px;
+        }
+
+
+    }
+}

@@ -16,6 +16,11 @@ body {
     font-size: 16px;
     line-height: 1.6;
 }
+header , 
+section {
+    max-width: 1200px;
+    margin-inline: auto;
+}
 
 
 
@@ -35,7 +40,6 @@ img {
 
 a {
     text-decoration: none;
-    font-weight: $fw-bold;
 }
 
 li {
