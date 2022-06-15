@@ -2,6 +2,7 @@
 
 .header {
     text-transform: uppercase;
+    visibility: hidden;
 
     &__container {
         display: flex;

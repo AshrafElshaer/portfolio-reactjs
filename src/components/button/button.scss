@@ -32,7 +32,7 @@
         transform: rotate(180deg);
     }
     &:hover{
-        background-color: rgba($color: $clr-blue, $alpha: 0.7);
+        background-color: rgba($color: $clr-blue, $alpha: 0.75);
         color: $clr-white;
     }
     &:hover::before ,
