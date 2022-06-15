@@ -1,11 +1,19 @@
 import { useState } from 'react';
-
+import './navbar.scss';
 const Navbar = () => {
 const [isOpen, setIsOpen] = useState(false);
 
 const toggleNavbar = () => {
-setIsOpen(!isOpen);
+    setIsOpen(!isOpen);
 }
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        setIsOpen(false);
+    };
+})
+
+
+
 return (
 <nav className='nav'>
     <ul className="navbar">

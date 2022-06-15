@@ -1,22 +1,33 @@
+@import '../../styles/main.scss';
+
 .header {
-    padding: 1rem;
     text-transform: uppercase;
-
-
-
-    @include breakpoint-md {
-        padding-inline: 2rem;
-    }
 
     &__container {
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 2rem;
-        margin-block: 12rem;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items:center;
+        gap:2rem;
+        margin-block: 5rem;
 
-        @include breakpoint-md {
+        @include breakpoint-md{
+            flex-direction: row;
             gap: 5rem;
+        }
+        .header-left {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2rem;
+            margin-block: 3rem;
+
+            @include breakpoint-md {
+                gap: 5rem;
+            }
+        }
+        .header-right{
+            text-align: left;
         }
 
         &__social-navbar {
@@ -44,7 +55,7 @@
 
         &__text {
             &--title {
-                font-size: clamp(1.7rem, 5vw, 3rem);
+                font-size: clamp(1.7rem, 4vw, 3rem);
                 margin-bottom: 2rem;
 
                 span {

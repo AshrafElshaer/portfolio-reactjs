@@ -1,3 +1,7 @@
+@import '../../styles/main.scss';
+
+
+
 .nav {
     position: sticky;
     top: 0;
@@ -31,9 +35,8 @@
         gap: 1rem;
         position: absolute;
         top: 9rem;
-        right: 0;
-        transform: translateX(14rem);
-        transition: transform 0.5s ease-in-out;
+        right: -14rem;
+        transition: right 0.5s ease-in-out;
 
 
         &::before {
@@ -51,7 +54,7 @@
         }
 
         &.active {
-            transform: translateX(0);
+            right:0;
         }
 
 

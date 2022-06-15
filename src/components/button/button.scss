@@ -1,3 +1,6 @@
+@import '../../styles/main.scss';
+
+
 .btn{
     position: relative;
     cursor: pointer;
@@ -5,6 +8,9 @@
     margin-right: 2rem;
     transition: all 0.3s ease-in-out ;
     transition-delay: 0.25s;
+    &:visited{
+        color: $clr-blue;
+    }
     &::before ,
     &::after{
         content: '';
@@ -26,7 +32,7 @@
         transform: rotate(180deg);
     }
     &:hover{
-        background-color: $clr-blue;
+        background-color: rgba($color: $clr-blue, $alpha: 0.7);
         color: $clr-white;
     }
     &:hover::before ,
