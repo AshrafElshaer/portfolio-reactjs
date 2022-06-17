@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState , useRef , useEffect } from 'react';
+import { gsap } from 'gsap';
 import './navbar.scss';
 const Navbar = () => {
 const [isOpen, setIsOpen] = useState(false);
+let navbarRef = useRef(null);
 
 const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -12,10 +14,14 @@ window.addEventListener('resize', () => {
     };
 })
 
+useEffect(()=>{
+    gsap.fromTo(navbarRef, {y:-40 }, { y : 0 , duration : 1.4 })
+},[])
+
 
 
 return (
-<nav className='nav'>
+<nav className='nav' ref={el => navbarRef = el}>
     <ul className="navbar">
         <li className="navbar__brand">
             <a href="#home" className="navbar__brand--link" aria-label='Ashraf Elshaer'>ASH</a>

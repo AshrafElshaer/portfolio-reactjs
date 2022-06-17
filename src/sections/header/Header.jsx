@@ -6,10 +6,11 @@ import "./header.scss";
 import { useRef, useEffect } from "react";
 import { FaLinkedin, FaGithub, FaTwitterSquare } from "react-icons/fa";
 import { Power3, gsap, TweenMax } from "gsap";
+
 const Header = () => {
   let headerRef = useRef(null);
-  let navbarRef = useRef(null);
   let socialNavbarRef = useRef(null);
+
   let greetRef = useRef(null);
   let nameRef = useRef(null);
   let jobRef = useRef(null);
@@ -20,16 +21,9 @@ const Header = () => {
     TweenMax.to(headerRef, { css: { visibility: "visible" } });
 
     gsap.fromTo(
-      navbarRef,
+      socialNavbarRef, 
       { x: -50, opacity: 0 },
-      { x: 0, opacity: 1, duration: 1.6, delay: 0.1 }
-    );
-
-
-    gsap.fromTo(
-      socialNavbarRef,
-      { x: -50, opacity: 0 },
-      { x: 0, opacity: 1, duration: 1.6, delay: 0.2 }
+      { x: 0, opacity: 1, duration: 1.6, ease: Power3.easeInOut, delay: 0.2 }
     );
     gsap.fromTo(
       greetRef,
@@ -70,21 +64,25 @@ const Header = () => {
       <Navbar />
       <div className='header__container'>
         <div className='header-left'>
-          <nav>
-            <ul
-              className='header__container__social-navbar'
-              ref={(el) => (socialNavbarRef = el)}>
-              <li className='header__container__social-navbar__list'>
+          <nav ref={(el) => (socialNavbarRef = el)}>
+            <ul className='header__container__social-navbar'>
+              <li
+                className='header__container__social-navbar__list'
+                >
                 <a href='http://' target='_blank' rel='noopener noreferrer'>
                   <FaLinkedin />
                 </a>
               </li>
-              <li className='header__container__social-navbar__list'>
+              <li
+                className='header__container__social-navbar__list'
+                >
                 <a href='http://' target='_blank' rel='noopener noreferrer'>
                   <FaGithub />
                 </a>
               </li>
-              <li className='header__container__social-navbar__list'>
+              <li
+                className='header__container__social-navbar__list'
+               >
                 <a href='http://' target='_blank' rel='noopener noreferrer'>
                   <FaTwitterSquare />
                 </a>

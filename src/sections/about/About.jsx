@@ -1,11 +1,28 @@
 import SkillCard from "../../components/skillCard/SkillCard";
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { AiFillHtml5 } from "react-icons/ai";
-import { DiCss3, DiReact, DiGitBranch, DiSass } from "react-icons/di";
-import { SiJavascript } from "react-icons/si";
-
+import {
+  DiCss3Full,
+  DiReact,
+  DiGitBranch,
+  DiSass,
+  DiJavascript1,
+} from "react-icons/di";
 import "./about.scss";
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  let sectionRef = useRef(null);
+  let sectionTitleRef = useRef(null);
+  let skillsBoxRef = useRef(null);
+
+  let contentTitleRef = useRef(null);
+  let descRef1 = useRef(null);
+  let descRef2 = useRef(null);
+  let descRef3 = useRef(null);
+
   const skills = [
     {
       id: 1,
@@ -14,42 +31,114 @@ const About = () => {
     },
     {
       id: 2,
-      icon: <DiCss3 />,
+      icon: <DiCss3Full />,
       title: "CSS3",
     },
     {
       id: 3,
-      icon: <SiJavascript />,
-      title: "JS",
+      icon: <DiSass />,
+      title: "SCSS",
     },
     {
       id: 4,
+      icon: <DiJavascript1 />,
+      title: "JavaScript",
+    },
+    {
+      id: 5,
       icon: <DiReact />,
       title: "REACT JS",
     },
     {
-      id: 5,
+      id: 6,
       icon: <DiGitBranch />,
       title: "GIT",
     },
-    {
-      id: 6,
-      icon: <DiSass />,
-      title: "SCSS",
-    },
   ];
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef,
+        start: "top 80%",
+        end: "top 60%",
+      },
+    });
+
+    tl.fromTo(
+      sectionTitleRef,
+      { x: -50 },
+      { x: 0, opacity: 1, duration: 0.8, delay: 0.5 }
+    )
+      .fromTo(
+        skillsBoxRef,
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        "-=60%"
+      )
+      .fromTo(
+        contentTitleRef,
+        { y: -30 },
+        { y: 0, opacity: 1, duration: 0.6 },
+        "<50%"
+      )
+      .fromTo(
+       [ descRef1,
+        descRef2,
+        descRef3],
+        { y: 30  },
+        { y: 0, opacity: 1, duration: 0.5, stagger:0.25 },
+        "<50%"
+      );
+  }, []);
+
   return (
-    <section className='about' id='about'>
+    <section className='about' id='about' ref={(el) => (sectionRef = el)}>
       <div className='about__left'>
-        <h1 className='about__title'>About Me</h1>
-        <div className='about__skills'>
+        <h1 className='about__left--title' ref={(el) => (sectionTitleRef = el)}>
+          About Me
+        </h1>
+        <div className='about__left__skills' ref={(el) => (skillsBoxRef = el)}>
+          <div className='about__left__skills--title'>
+            <h3>Technologies & Skills</h3>
+          </div>
           {skills.map(({ title, icon, id }) => (
             <SkillCard icon={icon} title={title} key={id} />
           ))}
+          <div className='about__left__skills--title'>
+            <h4>Hungry For More </h4>
+          </div>
         </div>
       </div>
-      <div className="about__right">
-          
+      <div className='about__right'>
+        <h2
+          className='about__right--title'
+          ref={(el) => (contentTitleRef = el)}>
+          Learn a little bit about me...
+        </h2>
+        <div className='about__right__content'>
+          <p
+            className='about__right__content--description'
+            ref={(el) => (descRef1 = el)}>
+            My name is Ashraf Elshaer and I go by Ash, a self-taught junior web developer, based in The
+            United States.
+          </p>
+          <p
+            className='about__right__content--description'
+            ref={(el) => (descRef2 = el)}>
+            Novmber 2021 is when I decided I want more from my life, so I began
+            to self teach web development. Started off with the basics HTML, CSS
+            and then started to dive into JavaScript.
+          </p>
+
+          <p
+            className='about__right__content--description'
+            ref={(el) => (descRef3 = el)}>
+            From the moment I produced Hello World" in the console of my first
+            application, I knew I was hooked into the world of software
+            development.
+          </p>
+        </div>
       </div>
     </section>
   );

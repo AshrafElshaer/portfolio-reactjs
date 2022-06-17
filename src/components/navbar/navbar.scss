@@ -3,15 +3,20 @@
 
 
 .nav {
-    position: sticky;
+    position: fixed;
+    width: 95%;
+    max-width: 1100px;
     top: 0;
     background-color:$clr-white;
+    z-index: 999;
+
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 
 
     @include breakpoint-md {

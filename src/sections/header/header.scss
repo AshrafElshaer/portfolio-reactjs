@@ -10,11 +10,13 @@
         justify-content: space-between;
         align-items:center;
         gap:2rem;
-        margin-block: 5rem;
+        margin-block: 7rem;
 
         @include breakpoint-md{
             flex-direction: row;
             gap: 5rem;
+            margin-block: 10rem;
+
         }
         .header-left {
             display: flex;
@@ -29,6 +31,8 @@
         }
         .header-right{
             text-align: left;
+            img{
+            position: relative;}
         }
 
         &__social-navbar {
@@ -56,7 +60,7 @@
 
         &__text {
             &--title {
-                font-size: clamp(1.7rem, 4vw, 3rem);
+                font-size: $fs-title;
                 margin-bottom: 2rem;
 
                 span {
