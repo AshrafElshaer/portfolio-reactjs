@@ -1,13 +1,16 @@
-import Header from './sections/header/Header';
-import About from './sections/about/About';
+import Header from "./sections/header/Header";
+import About from "./sections/about/About";
+import Portfolio from "./sections/portfolio/Portfolio";
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Header />
-      <About />
-      
-      
+
+      <main>
+        <About />
+        <Portfolio />
+      </main>
     </div>
   );
 }

@@ -1,0 +1,191 @@
+@import "../../styles/main.scss";
+
+@keyframes showCaseImgAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes btn-anim1 {
+  0%{
+    left:-100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+@keyframes btn-anim2 {
+  0%{
+    top:-100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+@keyframes btn-anim3 {
+  0%{
+    right:-100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+@keyframes btn-anim4 {
+  0%{
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom:  100%;
+  }
+}
+
+
+.showCase {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-block: 3rem;
+  margin-bottom: 40rem;
+  overflow: hidden;
+  
+
+  @include breakpoint-md {
+    flex-direction: row;
+  }
+
+  .portfolio__content {
+    position: relative;
+    margin-bottom: 3rem;
+    text-align: center;
+    @include breakpoint-md {
+      flex: 1;
+      text-align: left;
+    }
+    
+
+    &--title {
+      font-size: $fs-subTitle;
+      text-transform: uppercase;
+      opacity: 0;
+    }
+
+    &--subTitle {
+      font-size: 1.2rem;
+      text-transform: capitalize;
+      width: 90%;
+      margin: auto;
+      opacity: 0;
+      @include breakpoint-md{
+        margin: 0;
+      }
+    }
+    &--btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+      opacity: 0;
+      @include breakpoint-md {
+        justify-content: flex-start;
+      }
+
+      & > * {
+        position: relative;
+        font-size: 1.2rem;
+        border-radius: 0.25rem;
+        &:first-of-type {
+          color: $clr-white;
+          background-color: $clr-blue;
+          
+          &:visited{
+            color: $clr-white ;
+          }
+        }
+        &:last-of-type{
+          color: $clr-blue;
+          overflow: hidden;
+          &:visited{
+            color:  $clr-blue;
+          }
+          & span{
+            position: absolute;
+            display: block;
+            &:nth-of-type(1){
+              top: 0;
+              left: -100%;
+              width: 100%;
+              height: 2px;
+              background: linear-gradient(90deg , transparent, $clr-blue);
+              animation: btn-anim1 1s linear infinite ;
+            }
+            &:nth-of-type(2){
+              top: -100%;
+              right: 0;
+              width: 2px;
+              height: 100%;
+              background: linear-gradient(180deg , transparent, $clr-blue);
+              animation: btn-anim2 1s linear infinite ;
+              animation-delay: 0.25s
+            }
+            &:nth-of-type(3){
+              right: -100%;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background: linear-gradient(270deg , transparent, $clr-blue);
+              animation: btn-anim3 1s linear infinite ;
+              animation-delay: 0.5s
+            }
+            &:nth-of-type(4){
+              bottom: -100%;
+              left: 0;
+              width: 2px;
+              height: 100%;
+              background: linear-gradient(360deg , transparent, $clr-blue);
+              animation: btn-anim4 1s linear infinite ;
+              animation-delay: 0.75s
+            }
+
+          }
+        }
+      }
+    }
+  }
+
+  .portfolio__images {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    position: relative;
+    // top: 15rem;
+    width: 60%;
+    margin: auto;
+    transition: top 2s ease-in-out;
+    @include breakpoint-md {
+      flex: 1;
+    }
+    
+    img {
+      display: block;
+      animation: showCaseImgAnimation 3s infinite;
+      border-radius: 1rem;
+      width: 35%;
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
+      &:first-of-type {
+        animation-delay: 1.5s;
+      }
+      &:nth-last-of-type(2) {
+        animation-delay: 2s;
+      }
+    }
+  }
+}

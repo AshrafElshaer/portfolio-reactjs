@@ -1,0 +1,20 @@
+@import '../../styles/main.scss';
+
+
+.btn{
+    font-size: 1rem;
+    position: relative;
+    text-align: center;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    margin-inline: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    
+    svg{
+        margin-right: 1rem;
+        color: currentColor;
+    }
+    
+}

@@ -1,6 +1,7 @@
 import Navbar from "../../components/navbar/Navbar";
-import Button from "../../components/button/Button";
+import Link from "../../components/link/Link";
 import headerSVG from "../../images/header.svg";
+import { BsFileEarmarkPdfFill } from 'react-icons/bs'
 import "./header.scss";
 
 import { useRef, useEffect } from "react";
@@ -96,7 +97,7 @@ const Header = () => {
               <span ref={(el) => (jobRef = el)}>frontEnd web Developer</span>
             </h1>
             <div ref={(el) => (btnRef = el)}>
-              <Button link='#' text='view my resume' />
+              <Link link='#' text='view my resume' icon={<BsFileEarmarkPdfFill/>} />
             </div>
           </div>
         </div>

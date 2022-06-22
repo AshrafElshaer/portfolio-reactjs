@@ -1,5 +1,5 @@
 import SkillCard from "../../components/skillCard/SkillCard";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect , useState} from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { AiFillHtml5 } from "react-icons/ai";
@@ -54,43 +54,65 @@ const About = () => {
       icon: <DiGitBranch />,
       title: "GIT",
     },
-  ];
+  ]
 
+  const windowWidth = useState(window.innerWidth);
+  
+  
+  let scrollTriggerStart = () =>(
+    windowWidth <= 768 ? '20% center' : "center center")
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef,
-        start: "top 80%",
-        end: "top 60%",
+        start: scrollTriggerStart(),
+        onEnter: () => {
+          tl
+            .fromTo(
+              sectionTitleRef,
+              { x: -50 },
+              { x: 0, opacity: 1, duration: 0.8, delay: 0 }
+            )
+            .fromTo(
+              skillsBoxRef,
+              { y: 100, opacity: 0 },
+              { y: 0, opacity: 1, duration: 0.8 },
+              "-=60%"
+            ).fromTo(
+                contentTitleRef,
+                { y: -30 },
+                { y: 0, opacity: 1, duration: 0.6 },
+                "<50%"
+              ).fromTo(
+                [descRef1, descRef2, descRef3],
+                { y: 30 },
+                { y: 0, opacity: 1, duration: 0.5, stagger: 0.25 },
+                "<50%"
+              );
+        },
+        
+        onLeaveBack: () => {
+          tl
+            .to(sectionTitleRef, { x: -50, opacity: 0 })
+            .to(skillsBoxRef, { y: 100, opacity: 0 }, "-=60%")
+            .to(
+                contentTitleRef,
+                { y: -30 , opacity: 0 },
+                
+                "<50%"
+              ).to(
+                [descRef1, descRef2, descRef3],
+               
+                { y: 0, opacity: 0, duration: 0.5, stagger: 0.25 },
+                "<50%"
+              );
+        },
+        
       },
     });
 
-    tl.fromTo(
-      sectionTitleRef,
-      { x: -50 },
-      { x: 0, opacity: 1, duration: 0.8, delay: 0.5 }
-    )
-      .fromTo(
-        skillsBoxRef,
-        { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8 },
-        "-=60%"
-      )
-      .fromTo(
-        contentTitleRef,
-        { y: -30 },
-        { y: 0, opacity: 1, duration: 0.6 },
-        "<50%"
-      )
-      .fromTo(
-       [ descRef1,
-        descRef2,
-        descRef3],
-        { y: 30  },
-        { y: 0, opacity: 1, duration: 0.5, stagger:0.25 },
-        "<50%"
-      );
-  }, []);
+  
+  });
 
   return (
     <section className='about' id='about' ref={(el) => (sectionRef = el)}>
@@ -106,7 +128,7 @@ const About = () => {
             <SkillCard icon={icon} title={title} key={id} />
           ))}
           <div className='about__left__skills--title'>
-            <h4>Hungry For More </h4>
+            <h4>In Progress For More ... </h4>
           </div>
         </div>
       </div>
@@ -120,8 +142,8 @@ const About = () => {
           <p
             className='about__right__content--description'
             ref={(el) => (descRef1 = el)}>
-            My name is Ashraf Elshaer and I go by Ash, a self-taught junior web developer, based in The
-            United States.
+            My name is Ashraf Elshaer and I go by Ash, a self-taught junior web
+            developer, based in The United States .
           </p>
           <p
             className='about__right__content--description'
