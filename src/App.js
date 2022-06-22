@@ -1,6 +1,7 @@
 import Header from "./sections/header/Header";
 import About from "./sections/about/About";
 import Portfolio from "./sections/portfolio/Portfolio";
+import ContactMe from "./sections/contactMe/ContactMe";
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
         <About />
         <Portfolio />
       </main>
+      
+      <ContactMe />
     </div>
   );
 }
