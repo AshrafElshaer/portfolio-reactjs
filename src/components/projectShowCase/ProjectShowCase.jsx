@@ -20,7 +20,7 @@ const ProjectShowCase = ({ project }) => {
   
   
   const scrollTriggerStart = () =>(
-    window.innerWidth <= 768 ? "top 5%"  : "center center" )
+    window.innerWidth <= 768 ? "top 10%"  : "center center" )
     useEffect(() => {
     
     const tl = gsap.timeline({
