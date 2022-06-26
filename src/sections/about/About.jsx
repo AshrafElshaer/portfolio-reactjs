@@ -143,15 +143,14 @@ const About = () => {
           <p
             className='about__right__content--description'
             ref={(el) => (descRef1 = el)}>
-            My name is Ashraf Elshaer and I go by Ash, a self-taught junior web
-            developer, based in The United States .
+            My friends like to call me Ash , a self-taught junior web
+            developer focused on creating interactive digital experiences on the web , based in The United States.
           </p>
           <p
             className='about__right__content--description'
             ref={(el) => (descRef2 = el)}>
-            Novmber 2021 is when I decided I want more from my life, so I began
-            to self teach web development. Started off with the basics HTML, CSS
-            and then started to dive into JavaScript.
+            November 2021 is when I began to self-teach web development Started with the basics of HTML, CSS
+            and then dived into the world of JavaScript.
           </p>
 
           <p
