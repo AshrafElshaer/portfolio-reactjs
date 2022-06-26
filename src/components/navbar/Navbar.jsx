@@ -6,6 +6,7 @@ const [isOpen, setIsOpen] = useState(false);
 let navbarRef = useRef(null);
 
 const toggleNavbar = () => {
+    if (window.innerWidth > 768) return
     setIsOpen(!isOpen);
 }
 window.addEventListener('resize', () => {
@@ -39,7 +40,7 @@ return (
             </li>
             <li className="navbar__list">
                 <a href="#contact" className="navbar__list--link" onClick={toggleNavbar}
-                    aria-label='cintact me'>Contact</a>
+                    aria-label='cintact me'>Contact Me</a>
             </li>
         </ul>
         <li className="navbar__toggle">

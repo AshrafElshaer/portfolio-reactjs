@@ -1,12 +1,15 @@
+import { useRef, useEffect } from "react";
+import "./header.scss";
+
 import Navbar from "../../components/navbar/Navbar";
 import Link from "../../components/link/Link";
 import headerSVG from "../../images/header.svg";
-import { BsFileEarmarkPdfFill } from 'react-icons/bs'
-import "./header.scss";
 
-import { useRef, useEffect } from "react";
-import { FaLinkedin, FaGithub, FaTwitterSquare } from "react-icons/fa";
+import { BsFileEarmarkPdfFill } from 'react-icons/bs'
+import { FaLinkedin,FaGithub } from "react-icons/fa";
+import { AiFillInstagram } from 'react-icons/ai'
 import { Power3, gsap, TweenMax } from "gsap";
+import ScrollIcon from "../../components/scrollIcon/ScrollIcon";
 
 const Header = () => {
   let headerRef = useRef(null);
@@ -17,6 +20,7 @@ const Header = () => {
   let jobRef = useRef(null);
   let btnRef = useRef(null);
   let imgRef = useRef(null);
+  let iconRef = useRef(null)
 
   useEffect(() => {
     TweenMax.to(headerRef, { css: { visibility: "visible" } });
@@ -58,6 +62,11 @@ const Header = () => {
       { x: 100, opacity: 0 },
       { x: 0, opacity: 1, duration: 1, delay: 1, ease: Power3.easeInOut }
     );
+    gsap.fromTo(
+      iconRef,
+      { y: -30},
+      { x: 0, opacity: 1, duration: 0.6, delay: 2, ease: Power3.easeInOut }
+    );
   }, []);
 
   return (
@@ -70,22 +79,22 @@ const Header = () => {
               <li
                 className='header__container__social-navbar__list'
                 >
-                <a href='http://' target='_blank' rel='noopener noreferrer'>
+                <a href='https://www.linkedin.com/in/ashrafelshaer/' target='_blank' rel='noopener noreferrer' aria-label="linkedin profile">
                   <FaLinkedin />
                 </a>
               </li>
               <li
                 className='header__container__social-navbar__list'
                 >
-                <a href='http://' target='_blank' rel='noopener noreferrer'>
+                <a href='https://github.com/AshrafElshaer' target='_blank' rel='noopener noreferrer'  aria-label="github profile">
                   <FaGithub />
                 </a>
               </li>
               <li
                 className='header__container__social-navbar__list'
                >
-                <a href='http://' target='_blank' rel='noopener noreferrer'>
-                  <FaTwitterSquare />
+                <a href='https://www.instagram.com/ashraf.elsha3er/' target='_blank' rel='noopener noreferrer' aria-label="instagram profile">
+                  <AiFillInstagram />
                 </a>
               </li>
             </ul>
@@ -97,7 +106,7 @@ const Header = () => {
               <span ref={(el) => (jobRef = el)}>frontEnd web Developer</span>
             </h1>
             <div ref={(el) => (btnRef = el)}>
-              <Link link='#' text='view my resume' icon={<BsFileEarmarkPdfFill/>} />
+              <Link link='https://drive.google.com/file/d/12b_lRrlHKFtorTi7fiDjpQ1v_iEFs_mn/view' text='view my resume' icon={<BsFileEarmarkPdfFill/>} />
             </div>
           </div>
         </div>
@@ -105,6 +114,7 @@ const Header = () => {
           <img src={headerSVG} alt='header svg' ref={(el) => (imgRef = el)} />
         </div>
       </div>
+      <ScrollIcon  forwardRef={el => iconRef = el}/>
     </header>
   );
 };

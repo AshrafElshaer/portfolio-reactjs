@@ -1,0 +1,19 @@
+@import "../../styles/main.scss";
+
+.scrollIcon {
+  width: 2rem;
+  animation: iconAnimation 2s infinite;
+  opacity: 0;
+  margin: auto;
+}
+@keyframes iconAnimation {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}

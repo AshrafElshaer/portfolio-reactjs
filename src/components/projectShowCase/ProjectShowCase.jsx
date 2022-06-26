@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { MdRemoveRedEye } from "react-icons/md";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useEffect, useRef ,useState } from "react";
+import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,15 +14,15 @@ const ProjectShowCase = ({ project }) => {
   let titleRef = useRef(null);
   let subTittleRef = useRef(null);
   let btnsRef = useRef(null);
-  const windowWidth = useState(window.innerWidth);
+  
   
 
   
   
-  let scrollTriggerStart = () =>(
-    windowWidth <= 768 ? "top 5%"  : "center center" )
-   
-  useEffect(() => {
+  const scrollTriggerStart = () =>(
+    window.innerWidth <= 768 ? "top 5%"  : "center center" )
+    useEffect(() => {
+    
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger : titleRef,
@@ -56,7 +56,7 @@ const ProjectShowCase = ({ project }) => {
         <p className='portfolio__content--subTitle' ref={(el) => (subTittleRef = el)}>{project.subTitle}</p>
         <div className='portfolio__content--btns'ref={(el) => (btnsRef = el)} >
           <Link link={project.github} text={"Github"} icon={<FaGithub />} />
-          <Link link={project.live} text={"Live"} icon={<MdRemoveRedEye />} />
+          <Link link={project.live} text={"Live Demo"} icon={<MdRemoveRedEye />} />
         </div>
       </div>
       <div className='portfolio__images' ref={(el) => (imgsRef = el)}>

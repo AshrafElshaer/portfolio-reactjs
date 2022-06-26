@@ -12,21 +12,21 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     title: "amore hookah & cafe landing page",
-    subTitle: "a landing page for a local hookah & coffee lounge made with React Js ",
+    subTitle: "a landing page for a local hookah & coffee lounge. ( React Js , SCSS) ",
     images: [Images.amore1, Images.amore2],
     github: "https://github.com/AshrafElshaer/amore-lounge-reactJS",
     live: "https://ashrafelshaer.github.io/amore-lounge-reactJS/",
   },
   {
     title: "Clock App",
-    subTitle: "A fully function clock app provide ( Current time worldwide , adding - editing - deleting alarms , timer , stop watch ) made with vanilla js",
+    subTitle: "A fully function clock app provide Worldwide local Time  , CRUD alarms , timer , stop watch  . ( Vanilla Js )",
     images: [Images.clockApp1,Images.clockApp2,Images.clockApp3,Images.clockApp4],
     github: "https://github.com/AshrafElshaer/clock-app",
     live: "https://ashrafelshaer.github.io/clock-app/",
   },
   {
     title: "Todo app",
-    subTitle: "add , edit , delete , check & check todos made with vanilla js",
+    subTitle: "add , edit , delete , check & uncheck todos ( Vanilla Js )",
     images: [Images.todoApp1, Images.todoApp2,Images.todoApp3],
     github: "https://github.com/AshrafElshaer/todo-app",
     live: "https://ashrafelshaer.github.io/todo-app/",
@@ -43,7 +43,7 @@ const Portfolio = () => {
 
     const tl = gsap.timeline({
       scrollTrigger : {
-        trigger : titleRef,
+      trigger : titleRef,
       start: 'top 60%',
       
       onEnter: ()=>{
@@ -54,18 +54,6 @@ const Portfolio = () => {
       },
       }
     })
-
-    // tl.fromTo(titleRef,{ y : -30 },{ y : 0 , opacity: 1, duration: 1 ,   delay : 0.2, scrollTrigger: {
-    //   trigger : titleRef,
-    //   start: 'top 60%',
-      
-    //   onEnter: ()=>{
-    //     tl.to(titleRef,{y : 0 , opacity : 1})
-    //   },
-    //   onLeaveBack: ()=>{
-    //     tl.to(titleRef, {y : -30 , opacity : 0})
-    //   },
-    // } })
   },[])
 
   return (

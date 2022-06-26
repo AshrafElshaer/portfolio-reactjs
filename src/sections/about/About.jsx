@@ -1,5 +1,7 @@
+import { useRef, useEffect} from "react";
+import "./about.scss";
 import SkillCard from "../../components/skillCard/SkillCard";
-import { useRef, useEffect , useState} from "react";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { AiFillHtml5 } from "react-icons/ai";
@@ -10,7 +12,6 @@ import {
   DiSass,
   DiJavascript1,
 } from "react-icons/di";
-import "./about.scss";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
@@ -56,11 +57,11 @@ const About = () => {
     },
   ]
 
-  const windowWidth = useState(window.innerWidth);
   
   
-  let scrollTriggerStart = () =>(
-    windowWidth <= 768 ? '20% center' : "center center")
+  const scrollTriggerStart = () =>(
+    window.innerWidth <= 768 ? '20% center' : "35% center")
+    
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {

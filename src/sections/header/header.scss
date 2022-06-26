@@ -1,13 +1,22 @@
 @import "../../styles/main.scss";
 
 .header {
+  display: flex;
+  flex-direction: column;
   text-transform: uppercase;
   visibility: hidden;
+  padding-block: 5rem;
+  @include breakpoint-md{
+    padding-block: 10rem;
+  }
+  .scrollIcon{
+    margin-top: 5rem;
+  }
   .btn {
     transition: all 0.3s ease-in-out;
     transition-delay: 0.25s;
-    &:visited{
-        color: $clr-blue;
+    &:visited {
+      color: $clr-blue;
     }
     &::before,
     &::after {
@@ -46,12 +55,10 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    margin-block: 7rem;
 
     @include breakpoint-md {
       flex-direction: row;
       gap: 5rem;
-      margin-block: 10rem;
     }
     .header-left {
       display: flex;
@@ -72,6 +79,8 @@
     }
 
     &__social-navbar {
+      position: relative;
+
       &__list {
         margin-block: 0.5rem;
         transition: transform 0.3s ease-in-out;
@@ -93,6 +102,16 @@
     }
 
     &__text {
+      position: relative;
+      &::before {
+        content: "";
+        width: 0.25rem;
+        height: 90%;
+        position: absolute;
+        left: -8%;
+        top: 13%;
+        background-color: $clr-blue;
+      }
       &--title {
         font-size: $fs-title;
         margin-bottom: 2rem;
