@@ -10,26 +10,27 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const projects = [
-  {
-    title: "amore hookah & cafe landing page",
-    subTitle: "a landing page for a local hookah & coffee lounge. ( React Js , SCSS) ",
-    images: [Images.amore1, Images.amore2],
-    github: "https://github.com/AshrafElshaer/amore-lounge-reactJS",
-    live: "https://ashrafelshaer.github.io/amore-lounge-reactJS/",
-  },
+  
   {
     title: "Clock App",
-    subTitle: "A fully function clock app provide Worldwide local Time  , CRUD alarms , timer , stop watch  . ( Vanilla Js )",
+    subTitle: "A fully function clock app provide Worldwide local Time  , CRUD alarms , timer , stop watch  .",
     images: [Images.clockApp1,Images.clockApp2,Images.clockApp3,Images.clockApp4],
     github: "https://github.com/AshrafElshaer/clock-app",
     live: "https://ashrafelshaer.github.io/clock-app/",
   },
   {
     title: "Todo app",
-    subTitle: "add , edit , delete , check & uncheck todos ( Vanilla Js )",
+    subTitle: "add , edit , delete , check & uncheck todos .",
     images: [Images.todoApp1, Images.todoApp2,Images.todoApp3],
     github: "https://github.com/AshrafElshaer/todo-app",
     live: "https://ashrafelshaer.github.io/todo-app/",
+  },
+  {
+    title: "amore hookah & cafe landing page",
+    subTitle: "a landing page for a local hookah & coffee lounge. ( React Js , SCSS) ",
+    images: [Images.amore1, Images.amore2],
+    github: "https://github.com/AshrafElshaer/amore-lounge-reactJS",
+    live: "https://ashrafelshaer.github.io/amore-lounge-reactJS/",
   },
 ];
 
