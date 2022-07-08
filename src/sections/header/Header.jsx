@@ -106,7 +106,7 @@ const Header = () => {
               <span ref={(el) => (jobRef = el)}>frontEnd web Developer</span>
             </h1>
             <div ref={(el) => (btnRef = el)}>
-              <Link link='https://drive.google.com/file/d/12b_lRrlHKFtorTi7fiDjpQ1v_iEFs_mn/view' text='view my resume' icon={<BsFileEarmarkPdfFill/>} />
+              <Link link='https://drive.google.com/file/d/1um1ejq_Pyp8oUFY7EuzwMV3nIDBi3ykQ/view?usp=sharing' text='view my resume' icon={<BsFileEarmarkPdfFill/>} />
             </div>
           </div>
         </div>
