@@ -1,5 +1,4 @@
 import { useRef, useEffect} from "react";
-import "./about.scss";
 import SkillCard from "../../components/skillCard/SkillCard";
 
 import { gsap } from "gsap";

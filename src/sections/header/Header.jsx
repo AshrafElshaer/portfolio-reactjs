@@ -1,7 +1,5 @@
 import { useRef, useEffect } from "react";
-import "./header.scss";
 
-import Navbar from "../../components/navbar/Navbar";
 import Link from "../../components/link/Link";
 import headerSVG from "../../images/header.svg";
 
@@ -70,8 +68,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className='header' id='home' ref={(el) => (headerRef = el)}>
-      <Navbar />
+    <header className='header' id='intro' ref={(el) => (headerRef = el)}>
       <div className='header__container'>
         <div className='header-left'>
           <nav ref={(el) => (socialNavbarRef = el)}>

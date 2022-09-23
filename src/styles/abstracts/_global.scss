@@ -1,61 +1,47 @@
+@use "./breakpoints" as mediaQuery;
 html {
-    font-size: 100%;
-    scroll-behavior: smooth;
-    
-    
-    // &-webkit-scrollbar-track{
-    //     background: red;
-    // }
+  font-size: 100%;
+  scroll-behavior: smooth;
+//   overflow-x: hidden;
+
 }
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: $ff-poppins;
-    font-size: 16px;
-    line-height: 1.6;
-    // scrollbar-color: $clr-blue;
-   
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--color-white);
+//   overflow: hidden;
 }
 body::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
+  width: 12px;
+}
+nav,
+header,
+section,
+footer {
+  max-width: 68.75rem; //1100 PX
+  margin-inline: auto;
+  padding-inline: 1rem;
+ 
+
+  @include mediaQuery.breakpoint(md) {
+    padding-inline: 2rem;
   }
-  
-  body::-webkit-scrollbar-thumb {
-    background: $clr-blue;        /* color of the tracking area */
-  }
-header , 
+}
+header,
 section {
-    
-    max-width: 1100px;
-    margin-inline: auto;
-    padding-inline: 1rem;
-    overflow-x: hidden;
-   
-  
-    @include breakpoint-md{
-        padding-inline: 2rem;
-    }
+  height: 100vh;
+  padding-top: 4rem;
 }
-
-section{
-    padding-top: 7rem;
-}
-footer{
-    max-width: 1100px;
-    margin-inline: auto;
-    padding-inline: 1rem;
-    @include breakpoint-md{
-        padding-inline: 2rem;
-    }
-}
-
 
 
 h1,
@@ -64,19 +50,20 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: $fw-bold;
-    margin: 1rem 0;
+  font-family: var(--font-header);
+  margin-bottom: 1rem;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
-a {
-    text-decoration: none;
+a,
+a:visited,
+a:active {
+  text-decoration: none;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
-

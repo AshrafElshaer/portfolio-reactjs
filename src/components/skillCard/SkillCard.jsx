@@ -1,4 +1,3 @@
-import "./skillCard.scss";
 import React from "react";
 
 const SkillCard = ({ icon, title }) => {

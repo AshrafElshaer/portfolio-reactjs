@@ -1,4 +1,3 @@
-import "./portfolio.scss";
 import ProjectShowCase from "../../components/projectShowCase/ProjectShowCase";
 import Images from "../../images/index.js";
 

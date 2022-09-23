@@ -1,15 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-$clr-dark :#1A2E35;
-$clr-blue:#5240F8;
-$clr-white : #fff;
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans&display=swap");
+$clr-dark: #1a2e35;
+$clr-blue: #5240f8;
+$clr-white: #fff;
 
 // #3da9fc
 
-$ff-poppins : 'Poppins', sans-serif;
-$fw-regular : 400;
-$fw-bold : 700;
-
-$fs-title : clamp(1.7rem, 4vw, 3rem);
-$fs-subTitle : clamp(1.5rem, 3vw, 2.2rem);
 
 
+
+
+:root {
+  //fonts
+  --font-header: "DM Serif Display", serif;
+  --font-text: "Public Sans", sans-serif;
+
+  --fontSize-title: clamp(1.7rem, 4vw, 3rem);
+  --fontSize-subTitle: clamp(1.5rem, 3vw, 2.2rem);
+
+  //colors
+  --color-dark: #1a2e35;
+  --color-blue: #5240f8;
+  --color-white: #fff;
+}
