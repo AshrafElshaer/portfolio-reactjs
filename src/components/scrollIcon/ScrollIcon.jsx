@@ -1,5 +1,4 @@
 
-import './scrollIcon.scss';
 import scrollIcon from '../../images/scrollIcon.png'
 
 const ScrollIcon = ({  forwardRef  }) => {

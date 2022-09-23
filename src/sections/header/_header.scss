@@ -1,4 +1,4 @@
-@import "../../styles/main.scss";
+@use "../../styles/abstracts/breakpoints" as mediaQuery;
 
 .header {
   display: flex;
@@ -6,17 +6,17 @@
   text-transform: uppercase;
   visibility: hidden;
   padding-block: 5rem;
-  @include breakpoint-md{
+  @include mediaQuery.breakpoint(md) {
     padding-block: 10rem;
   }
-  .scrollIcon{
+  .scrollIcon {
     margin-top: 5rem;
   }
   .btn {
     transition: all 0.3s ease-in-out;
     transition-delay: 0.25s;
     &:visited {
-      color: $clr-blue;
+      color: var(--color-blue);
     }
     &::before,
     &::after {
@@ -24,7 +24,7 @@
       position: absolute;
       width: 20px;
       height: 20px;
-      border: 2px solid $clr-blue;
+      border: 2px solid var(--color-blue);
       border-top: transparent;
       border-right: transparent;
       transition: 1s;
@@ -39,8 +39,8 @@
       transform: rotate(180deg);
     }
     &:hover {
-      background-color: rgba($color: $clr-blue, $alpha: 0.75);
-      color: $clr-white;
+      background-color: rgba($color: var(--color-blue), $alpha: 0.75);
+      color: var(--color-white);
     }
     &:hover::before,
     &:hover::after {
@@ -56,7 +56,7 @@
     align-items: center;
     gap: 2rem;
 
-    @include breakpoint-md {
+    @include mediaQuery.breakpoint(md) {
       flex-direction: row;
       gap: 5rem;
     }
@@ -67,7 +67,7 @@
       gap: 2rem;
       margin-block: 3rem;
 
-      @include breakpoint-md {
+      @include mediaQuery.breakpoint(md) {
         gap: 5rem;
       }
     }
@@ -86,12 +86,12 @@
         transition: transform 0.3s ease-in-out;
 
         a {
-          color: $clr-dark;
+          color: var(--color-dark);
           font-size: 1.5rem;
           transition: color 0.3s ease-in-out;
 
           &:hover {
-            color: $clr-blue;
+            color: var(--color-blue);
           }
         }
 
@@ -110,17 +110,17 @@
         position: absolute;
         left: -8%;
         top: 13%;
-        background-color: $clr-blue;
+        background-color: var(--color-blue);
       }
       &--title {
-        font-size: $fs-title;
+        font-size: var(--fontSize-title);
         margin-bottom: 2rem;
 
         span {
           display: block;
 
           &:nth-of-type(2) {
-            color: $clr-blue;
+            color: var(--color-blue);
           }
 
           &:last-of-type {

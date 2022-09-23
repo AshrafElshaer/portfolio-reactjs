@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
 import emailjs from "emailjs-com";
-import "./contactMe.scss";
 
 import { IoIosSend } from "react-icons/io";
 import { BsCheckLg } from "react-icons/bs";

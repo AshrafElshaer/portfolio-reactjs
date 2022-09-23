@@ -1,11 +1,10 @@
-@import '../../styles/main.scss';
 
 
 .portfolio{
     margin-top: 5rem;
     &__title{
         text-align: center;
-        font-size: $fs-subTitle;
+        // font-size: $fs-subTitle;
         margin-block: 2rem;
         opacity: 0;
     }

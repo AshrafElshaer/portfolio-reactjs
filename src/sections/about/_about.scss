@@ -1,4 +1,4 @@
-@import "../../styles/main.scss";
+@use '../../styles/abstracts/breakpoints' as mediaQuery;
 
 .about {
   display: flex;
@@ -7,10 +7,10 @@
   align-items: center;
   overflow: hidden;
 
-  @include breakpoint-md {
+  @include mediaQuery.breakpoint(md) {
     flex-direction: row;
     justify-content: space-between;
-    // align-items: flex-start;
+
   }
   &__skills__item {
     &:nth-of-type(2):hover > :first-child {
@@ -40,7 +40,7 @@
     align-items: center;
     flex: 1;
 
-    @include breakpoint-md {
+    @include mediaQuery.breakpoint(md) {
       flex-direction: row;
       align-items: flex-start;
       justify-content: flex-start;
@@ -48,10 +48,10 @@
     }
 
     &--title {
-      font-size: $fs-title;
+      // font-size: $fs-title;
       letter-spacing: 4px;
       opacity: 0;
-      @include breakpoint-md {
+      @include mediaQuery.breakpoint(md){
         
         writing-mode: vertical-rl;
       }
@@ -62,12 +62,12 @@
       width: 20rem;
       opacity: 0;
       border-radius: 0.5rem;
-      background-color: $clr-dark;
+      background-color: var(--color-dark);
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
       &--title {
-        color: $clr-white;
+        color: var(--color-white);
         margin: auto;
       }
     }
@@ -76,14 +76,14 @@
   &__right {
     text-align: center;
     flex: 1;
-    @include breakpoint-md {
+    @include mediaQuery.breakpoint(md) {
       text-align: left;
       
     }
     &--title {
-      font-size: $fs-subTitle;
+      // font-size: $fs-subTitle;
       opacity: 0;
-      @include breakpoint-md {
+      @include mediaQuery.breakpoint(md) {
         margin-top: 0;
       }
     }

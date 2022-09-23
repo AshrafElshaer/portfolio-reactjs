@@ -1,4 +1,3 @@
-import "./projectShowCase.scss";
 import Link from "../link/Link";
 import { FaGithub } from "react-icons/fa";
 import { MdRemoveRedEye } from "react-icons/md";
