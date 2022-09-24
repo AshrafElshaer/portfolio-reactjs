@@ -17,8 +17,8 @@ export const navbarLinks = [
   },
 ];
 
-export const introHeader = [
-  "I am Ash,",
+export const introTitle = [
+  "Ashraf Elshaer,",
   "frontend developer",
   "based in United States",
 ];
@@ -26,10 +26,14 @@ export const introHeader = [
 export const socialMediaLinks = [
   {
     title: "LinkedIn",
-    link: "",
+    path: "",
   },
   {
     title: "GitHub",
-    link: "",
+    path: "",
   },
+  {
+    title: "Twitter",
+    path: "",
+  }
 ];
