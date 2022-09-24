@@ -1,16 +1,15 @@
 import { useRef, useEffect } from "react";
 
-import Link from "../../components/link/Link";
 import headerSVG from "../../images/header.svg";
+import { Link } from "../../components";
 
 import { BsFileEarmarkPdfFill } from "react-icons/bs";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { Power3, gsap, TweenMax } from "gsap";
-import ScrollIcon from "../../components/scrollIcon/ScrollIcon";
 import { introTitle, socialMediaLinks } from "../../assets/constants";
 
-const Header = () => {
+const intro = () => {
   // let headerRef = useRef(null);
   // let socialNavbarRef = useRef(null);
 
@@ -107,4 +106,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default intro;
