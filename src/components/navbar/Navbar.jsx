@@ -39,6 +39,12 @@ const Navbar = () => {
     } else {
     }
   }, [windowSize.width]);
+  //NAVBAR ENTRY ANIMATION
+  useEffect(() => {
+    gsap.fromTo(navbarRef, { y: -50 }, { opacity: 1, y: 0, duration: 1.4 });
+  }, []);
+
+  useEffect(() => {
     const sections = document.querySelectorAll("section , footer , header");
     window.addEventListener("scroll", navHighlight);
 
