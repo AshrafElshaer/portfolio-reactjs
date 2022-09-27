@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { navbarLinks } from "../../assets/constants";
 import { gsap } from "gsap";
-import {Link} from '../index'
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   let navbarRef = useRef(null);
@@ -10,6 +9,7 @@ const Navbar = () => {
   const toggleNavbar = () =>
     windowSize.width <= 768 && setIsMenuOpen(!isMenuOpen);
 
+  //NAVBAR LINK HOVER ANIMATION
   useEffect(() => {
     const menuLinks = [...document.querySelectorAll(".navbar__list--link")];
     menuLinks.forEach((link) => {
@@ -31,7 +31,7 @@ const Navbar = () => {
       }
       link.appendChild(cloneDiv);
     });
-  }, []);
+  },[]);
 
   useEffect(() => {
     if (windowSize.width >= 768) {
@@ -39,13 +39,32 @@ const Navbar = () => {
     } else {
     }
   }, [windowSize.width]);
+    const sections = document.querySelectorAll("section , footer , header");
+    window.addEventListener("scroll", navHighlight);
 
-  useEffect(() => {
-    gsap.fromTo(
-      navbarRef,
-      {  y: -50 },
-      { opacity: 1, y: 0, duration: 1.4 }
-    );
+    function navHighlight() {
+      // Get current scroll position
+      let scrollY = window.pageYOffset;
+
+      // Loop through sections to get height(including padding and border),
+      // top and ID values for each
+      sections.forEach(function (current) {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 50;
+        const sectionId = current.getAttribute("id");
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          document
+          .querySelector(`a[href='#${sectionId}']`)
+            .parentNode.classList.add("current");
+        } 
+        else {
+          document
+            .querySelector(`a[href='#${sectionId}']`)
+            .parentNode.classList.remove("current");
+        }
+      });
+    }
   }, []);
 
   return (
@@ -58,7 +77,7 @@ const Navbar = () => {
 
       <ul className={`navbar__main ${isMenuOpen && "active"}`}>
         {navbarLinks.map((link, idx) => (
-          <li className='navbar__list' key={idx}>
+          <li className={`navbar__list ${idx === 0 &&'current'}`} key={idx}>
             <a
               href={`#${link.path}`}
               className='navbar__list--link'
@@ -71,7 +90,6 @@ const Navbar = () => {
             </a>
           </li>
         ))}
-        
       </ul>
       <div className='navbar__toggle'>
         <svg
