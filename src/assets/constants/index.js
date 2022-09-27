@@ -19,8 +19,8 @@ export const navbarLinks = [
 
 export const introTitle = [
   "Ashraf Elshaer,",
-  "frontend developer",
-  "based in United States",
+  "frontend developer,",
+  "based in United States.",
 ];
 
 export const socialMediaLinks = [

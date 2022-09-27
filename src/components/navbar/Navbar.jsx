@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { navbarLinks } from "../../assets/constants";
 import { gsap } from "gsap";
+import {Link} from '../index'
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   let navbarRef = useRef(null);
@@ -70,6 +71,7 @@ const Navbar = () => {
             </a>
           </li>
         ))}
+        
       </ul>
       <div className='navbar__toggle'>
         <svg

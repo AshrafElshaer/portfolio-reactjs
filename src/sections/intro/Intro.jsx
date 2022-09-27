@@ -6,20 +6,58 @@ import { Link } from "../../components";
 import { BsFileEarmarkPdfFill } from "react-icons/bs";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
-import { Power3, gsap, TweenMax } from "gsap";
+import { Power3, gsap } from "gsap";
 import { introTitle, socialMediaLinks } from "../../assets/constants";
 
-const intro = () => {
-  // let headerRef = useRef(null);
-  // let socialNavbarRef = useRef(null);
+const Intro = () => {
+  const tl = gsap.timeline();
+  const headerRef = useRef(null);
+  const greetRef = useRef(null);
+  const titleRefs = useRef([]);
+  const introNavRef = useRef([]);
+  const circlesRef = useRef([]);
 
-  // let greetRef = useRef(null);
-  // let nameRef = useRef(null);
-  // let jobRef = useRef(null);
-  // let btnRef = useRef(null);
-  // let imgRef = useRef(null);
-  // let iconRef = useRef(null)
+  const addToTitleRef = (el) => {
+    if (el && !titleRefs.current.includes(el)) titleRefs.current.push(el);
+  };
+  const addIntroNavRef = (el) => {
+    if (el && !introNavRef.current.includes(el)) introNavRef.current.push(el);
+  };
+  const addCirclesRef = (el) => {
+    if (el && !circlesRef.current.includes(el)) circlesRef.current.push(el);
+  };
 
+  useEffect(() => {
+    console.log(circlesRef.current);
+    gsap.to(headerRef.current, { alpha: 1 });
+    tl.from(greetRef.current, { y: -50, alpha: 0, duration: 1, delay: 1 })
+      .from(
+        titleRefs.current,
+        {
+          alpha: 0,
+          y: 25,
+          rotate: 15,
+          duration: 1,
+          stagger: 0.5,
+          ease: "back.out(2.5)",
+        },
+        "-=25%"
+      )
+      .from(
+        introNavRef.current,
+        { y: 100, alpha: 0, duration: 0.6, stagger: 0.2 },
+        "-=25%"
+      )
+      .to(
+        circlesRef.current,
+        { alpha: 1, duration: 0.4, stagger: 0.2 },
+        "-=25%"
+      ).to(
+        circlesRef.current,
+        { alpha: 0.3, duration: 0.4, stagger: 0.2 },
+        "-=35%"
+      );
+  }, [tl]);
   // useEffect(() => {
   //   TweenMax.to(headerRef, { css: { visibility: "visible" } });
 
@@ -68,13 +106,13 @@ const intro = () => {
   // }, []);
 
   return (
-    <header className='intro' id='intro'>
+    <header className='intro' id='intro' ref={headerRef}>
       <div className='intro__text'>
-        <p>Hello World I'm</p>
+        <p ref={greetRef}>Hey there ! , I'm</p>
         <h1 className='intro__text--title'>
           {introTitle.map((word) => (
             <div key={word}>
-              <span>{word}</span>
+              <span ref={addToTitleRef}>{word}</span>
             </div>
           ))}
         </h1>
@@ -83,7 +121,10 @@ const intro = () => {
         <ul>
           {socialMediaLinks.map((link) => {
             return (
-              <li key={link.title} className='intro__nav__item'>
+              <li
+                key={link.title}
+                className='intro__nav__item'
+                ref={addIntroNavRef}>
                 <a
                   href={link.path}
                   rrel='noreferrer noopener'
@@ -96,14 +137,14 @@ const intro = () => {
         </ul>
       </nav>
       <div className='intro__circles'>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span ref={addCirclesRef}></span>
+        <span ref={addCirclesRef}></span>
+        <span ref={addCirclesRef}></span>
+        <span ref={addCirclesRef}></span>
+        <span ref={addCirclesRef}></span>
       </div>
     </header>
   );
 };
 
-export default intro;
+export default Intro;
