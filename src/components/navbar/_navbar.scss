@@ -17,6 +17,7 @@
   border-bottom-right-radius: 8px;
   z-index: 999;
   opacity: 0;
+  box-shadow: var(--box-shadow);
 
   &__brand {
     margin: 0;
@@ -82,8 +83,8 @@
       cursor: pointer;
       transition: background-color 0.2s ease-in-out;
       &.current {
-        background-color: rgba(0,0,0, 0.1);
-        & .navbar__list--link{
+        background-color: rgba(0, 0, 0, 0.1);
+        & .navbar__list--link {
           color: var(--color-blue);
         }
       }

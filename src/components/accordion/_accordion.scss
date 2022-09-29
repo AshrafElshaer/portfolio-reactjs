@@ -1,0 +1,39 @@
+.accordion {
+    margin-block: 1rem;
+    
+  &__title {
+    width: 100%;
+    color: var(--color-white);
+    font-family: var(--font-text);
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    svg{
+        transition: transform 0.4s ease-in-out;
+
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-height: 0;
+    padding: 0.5rem ;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+  }
+  &.open{
+    .accordion__title svg{
+        transform: rotate(-180deg);
+    }
+    .accordion__menu{
+        height: auto;
+        max-height: 10rem;
+    }
+  }
+}

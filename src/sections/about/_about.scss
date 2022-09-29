@@ -1,6 +1,7 @@
-@use '../../styles/abstracts/breakpoints' as mediaQuery;
+@use "../../styles/abstracts/breakpoints" as mediaQuery;
 
 .about {
+  padding-block: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,27 +11,6 @@
   @include mediaQuery.breakpoint(md) {
     flex-direction: row;
     justify-content: space-between;
-
-  }
-  &__skills__item {
-    &:nth-of-type(2):hover > :first-child {
-      color: #f06529;
-    }
-    &:nth-of-type(3):hover > :first-child {
-      color: #2965f1;
-    }
-    &:nth-of-type(4):hover > :first-child {
-      color: #cd6799;
-    }
-    &:nth-of-type(5):hover > :first-child {
-      color: #f0db4f;
-    }
-    &:nth-of-type(6):hover > :first-child {
-      color: #61dbfb;
-    }
-    &:nth-of-type(7):hover > :first-child {
-      color: #f1502f;
-    }
   }
 
   &__left {
@@ -42,17 +22,16 @@
 
     @include mediaQuery.breakpoint(md) {
       flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
       justify-content: flex-start;
       gap: 2rem;
     }
 
     &--title {
-      // font-size: $fs-title;
+      font-size: clamp(1.5rem, 0.9973rem + 2.1858vw, 2.5rem);
       letter-spacing: 4px;
-      opacity: 0;
-      @include mediaQuery.breakpoint(md){
-        
+      // opacity: 0;
+      @include mediaQuery.breakpoint(md) {
         writing-mode: vertical-rl;
       }
     }
@@ -60,15 +39,13 @@
     &__skills {
       padding: 1rem;
       width: 20rem;
-      opacity: 0;
+      // opacity: 0;
       border-radius: 0.5rem;
       background-color: var(--color-dark);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
       &--title {
         color: var(--color-white);
-        margin: auto;
+        text-align: center;
+        margin: 1rem 0 2rem 0;
       }
     }
   }
@@ -78,11 +55,10 @@
     flex: 1;
     @include mediaQuery.breakpoint(md) {
       text-align: left;
-      
     }
     &--title {
       // font-size: $fs-subTitle;
-      opacity: 0;
+      // opacity: 0;
       @include mediaQuery.breakpoint(md) {
         margin-top: 0;
       }
@@ -90,7 +66,7 @@
     &__content {
       &--description {
         margin-bottom: 1rem;
-        opacity: 0;
+        // opacity: 0;
       }
     }
   }

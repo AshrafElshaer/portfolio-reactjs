@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import { Power3, gsap } from "gsap";
 import { introTitle, socialMediaLinks } from "../../assets/constants";
+import { BsArrowDown }from 'react-icons/bs'
 
 const Intro = () => {
   const tl = gsap.timeline();
@@ -37,20 +38,26 @@ const Intro = () => {
       )
       .from(
         introNavRef.current,
-        { y: 100, alpha: 0, duration: 0.6, stagger: 0.2 , ease: Power3.easeInOut},
+        {
+          y: 100,
+          alpha: 0,
+          duration: 0.6,
+          stagger: 0.2,
+          ease: Power3.easeInOut,
+        },
         "-=25%"
       )
       .to(
         circlesRef.current,
         { alpha: 1, duration: 0.4, stagger: 0.2 },
         "-=25%"
-      ).to(
+      )
+      .to(
         circlesRef.current,
         { alpha: 0.3, duration: 0.4, stagger: 0.2 },
         "-=35%"
       );
   }, [tl]);
-  
 
   return (
     <header className='intro' id='intro' ref={headerRef}>
@@ -89,6 +96,15 @@ const Intro = () => {
         <span ref={addCirclesRef}></span>
         <span ref={addCirclesRef}></span>
         <span ref={addCirclesRef}></span>
+      </div>
+      <div className='intro__ScrollIcon'>
+        <a
+          href='#about'
+          className='intro__ScrollIcon--link'
+          rel='noopener noreferrer'
+          aria-label='scroll down'>
+          <BsArrowDown />
+        </a>
       </div>
     </header>
   );
