@@ -1,22 +1,15 @@
-import { useRef, useEffect , useState } from "react";
-import SkillCard from "../../components/skillCard/SkillCard";
+import { useRef, useEffect, useState } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { AiFillHtml5 } from "react-icons/ai";
-import {
-  DiCss3Full,
-  DiReact,
-  DiGitBranch,
-  DiSass,
-  DiJavascript1,
-} from "react-icons/di";
+
 import { Accordion } from "../../components";
-import { technologies } from "../../assets/constants";
+import { technologies, aboutMe } from "../../assets/constants";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const [selectedAccrodion , setSelectedAccordion] = useState(null)
+  const [selectedAccrodion, setSelectedAccordion] = useState(0);
+  const { about, mission, vision } = aboutMe;
   let sectionRef = useRef(null);
   let sectionTitleRef = useRef(null);
   let skillsBoxRef = useRef(null);
@@ -26,11 +19,11 @@ const About = () => {
   let descRef2 = useRef(null);
   let descRef3 = useRef(null);
 
-  const toggleAccordio = idx => {
-    if(selectedAccrodion === idx) return setSelectedAccordion(null);
+  const toggleAccordio = (idx) => {
+    if (selectedAccrodion === idx) return setSelectedAccordion(null);
 
-    setSelectedAccordion(idx)
-  }
+    setSelectedAccordion(idx);
+  };
 
   // const scrollTriggerStart = () =>(
   //   window.innerWidth <= 768 ? '20% center' : "35% center")
@@ -98,7 +91,13 @@ const About = () => {
             <h3>Technologies I working with </h3>
           </div>
           {technologies.map((tech, idx) => (
-            <Accordion tech={tech} idx={idx} key={idx} onToggle={toggleAccordio} selectedAccrodion={selectedAccrodion}/>
+            <Accordion
+              tech={tech}
+              idx={idx}
+              key={idx}
+              onToggle={toggleAccordio}
+              selectedAccrodion={selectedAccrodion}
+            />
           ))}
         </div>
       </div>
@@ -112,25 +111,21 @@ const About = () => {
           <p
             className='about__right__content--description'
             ref={(el) => (descRef1 = el)}>
-            My friends like to call me Ash , a self-taught junior web developer
-            focused on creating interactive digital experiences on the web ,
-            based in The United States.
+            {about}
           </p>
-          <p
+          <div
             className='about__right__content--description'
             ref={(el) => (descRef2 = el)}>
-            November 2021 is when I began to self-teach web development Started
-            with the basics of HTML, CSS and then dived into the world of
-            JavaScript.
-          </p>
+            <h3>- {mission.title}</h3>
+            {mission.text}
+          </div>
 
-          <p
+          <div
             className='about__right__content--description'
             ref={(el) => (descRef3 = el)}>
-            From the moment I produced Hello World" in the console of my first
-            application, I knew I was hooked into the world of software
-            development.
-          </p>
+            <h3>- {vision.title}</h3>
+            {vision.text}
+          </div>
         </div>
       </div>
     </section>

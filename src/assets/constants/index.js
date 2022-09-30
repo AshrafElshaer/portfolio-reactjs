@@ -5,6 +5,7 @@ import {
   DiGitBranch,
   DiSass,
   DiJavascript1,
+  DiGithubBadge,
 } from "react-icons/di";
 import { ReactComponent as Gsap } from "../gsap-greensock.svg";
 
@@ -50,7 +51,7 @@ export const socialMediaLinks = [
 
 export const technologies = [
   {
-    title: "programming language's",
+    title: "language's",
     skills: [
       {
         icon: <DiJavascript1 />,
@@ -79,7 +80,7 @@ export const technologies = [
       },
       {
         icon: <DiReact />,
-        name: "REACT JS",
+        name: "React JS",
         color: "#61dbfb",
       },
     ],
@@ -98,9 +99,27 @@ export const technologies = [
     skills: [
       {
         icon: <DiGitBranch />,
-        name: "GIT",
+        name: "Git",
         color: "#f1502f",
+      },
+      {
+        icon: <DiGithubBadge />,
+        name: "GitHub",
+        color: "#fff",
       },
     ],
   },
 ];
+
+export const aboutMe = {
+  about:
+    "My friend's call me Ash , a self-taught junior web developer focused on creating interactive digital experiences on the web.",
+  mission: {
+    title: " Mission",
+    text: "To empower our clients to use the web to its full potential by providing affordable, effective, custom solutions.",
+  },
+  vision: {
+    title: " Vision",
+    text: "To become a prime performer, in providing quality Web and Software solutions in the competitive global marketplace.",
+  },
+};

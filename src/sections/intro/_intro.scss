@@ -51,7 +51,7 @@
     z-index: 99;
     @include mediaQuery.breakpoint(md) {
       position: absolute;
-      bottom: 12rem;
+      top: 50%;
       right: -5rem;
       transform: rotate(-90deg);
     }

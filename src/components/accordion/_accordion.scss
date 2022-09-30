@@ -24,7 +24,6 @@
     gap: 2rem;
     max-height: 0;
     padding: 0.5rem ;
-    transition: all 0.4s ease-in-out;
     overflow: hidden;
   }
   &.open{
@@ -33,7 +32,7 @@
     }
     .accordion__menu{
         height: auto;
-        max-height: 10rem;
+        max-height: 99rem;
     }
   }
 }
