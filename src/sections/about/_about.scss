@@ -31,7 +31,7 @@
     &--title {
       font-size: clamp(1.5rem, 0.9973rem + 2.1858vw, 2.5rem);
       letter-spacing: 4px;
-      // opacity: 0;
+      opacity: 0;
       @include mediaQuery.breakpoint(900px) {
         writing-mode: vertical-rl;
       }
@@ -40,7 +40,7 @@
     &__skills {
       padding: 1rem;
       width: 20rem;
-      // opacity: 0;
+      opacity: 0;
       border-radius: 0.5rem;
       background-color: var(--color-dark);
       box-shadow: var(--box-shadow);
@@ -62,8 +62,7 @@
       text-align: left;
     }
     &--title {
-      // font-size: $fs-subTitle;
-      // opacity: 0;
+      opacity: 0;
       @include mediaQuery.breakpoint(md) {
         margin-top: 0;
       }
@@ -71,8 +70,7 @@
     &__content {
       &--description {
         margin-bottom: 1rem;
-
-        // opacity: 0;
+        opacity: 0;
       }
     }
   }

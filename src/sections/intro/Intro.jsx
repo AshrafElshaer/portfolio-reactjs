@@ -5,11 +5,12 @@ import { BsArrowDown }from 'react-icons/bs'
 
 const Intro = () => {
   const tl = gsap.timeline();
-  const headerRef = useRef(null);
-  const greetRef = useRef(null);
+  const headerRef = useRef();
+  const greetRef = useRef();
   const titleRefs = useRef([]);
   const introNavRef = useRef([]);
   const circlesRef = useRef([]);
+  const scrollIconRef = useRef()
 
   const addToTitleRef = (el) => {
     if (el && !titleRefs.current.includes(el)) titleRefs.current.push(el);
@@ -56,7 +57,7 @@ const Intro = () => {
         circlesRef.current,
         { alpha: 0.3, duration: 0.4, stagger: 0.2 },
         "-=35%"
-      );
+      ).from(scrollIconRef.current, {y : 50 , alpha : 0 , duration : 0.5 })
   }, [tl]);
 
   return (
@@ -97,7 +98,7 @@ const Intro = () => {
         <span ref={addCirclesRef}></span>
         <span ref={addCirclesRef}></span>
       </div>
-      <div className='intro__ScrollIcon'>
+      <div className='intro__ScrollIcon' ref={scrollIconRef}>
         <a
           href='#about'
           className='intro__ScrollIcon--link'

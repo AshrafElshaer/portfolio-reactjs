@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -8,11 +9,16 @@ import { technologies, aboutMe } from "../../assets/constants";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  const windowSize = useWindowSize();
   const [selectedAccrodion, setSelectedAccordion] = useState(0);
+  const [animationTrigger, setAnimationTrigger] = useState(
+    windowSize.width <= 768 ? "20% center" : "35% center"
+  );
   const { about, mission, vision } = aboutMe;
-  let sectionRef = useRef(null);
-  let sectionTitleRef = useRef(null);
-  let skillsBoxRef = useRef(null);
+  const sectionRef = useRef();
+  const sectionTitleRef = useRef();
+  const skillsBoxRef = useRef();
+  const accordionRef = useRef([]);
 
   let contentTitleRef = useRef(null);
   let descRef1 = useRef(null);
@@ -24,69 +30,59 @@ const About = () => {
 
     setSelectedAccordion(idx);
   };
+  const addAccordionToRef = (el) => {
+    if (el && !accordionRef.current.includes(el)) accordionRef.current.push(el);
+  };
 
-  // const scrollTriggerStart = () =>(
-  //   window.innerWidth <= 768 ? '20% center' : "35% center")
-
-  // useEffect(() => {
-  //   const tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: sectionRef,
-  //       start: scrollTriggerStart(),
-  //       onEnter: () => {
-  //         tl
-  //           .fromTo(
-  //             sectionTitleRef,
-  //             { x: -50 },
-  //             { x: 0, opacity: 1, duration: 0.8, delay: 0 }
-  //           )
-  //           .fromTo(
-  //             skillsBoxRef,
-  //             { y: 100, opacity: 0 },
-  //             { y: 0, opacity: 1, duration: 0.8 },
-  //             "-=60%"
-  //           ).fromTo(
-  //               contentTitleRef,
-  //               { y: -30 },
-  //               { y: 0, opacity: 1, duration: 0.6 },
-  //               "<50%"
-  //             ).fromTo(
-  //               [descRef1, descRef2, descRef3],
-  //               { y: 30 },
-  //               { y: 0, opacity: 1, duration: 0.5, stagger: 0.25 },
-  //               "<50%"
-  //             );
-  //       },
-
-  //       onLeaveBack: () => {
-  //         tl
-  //           .to(sectionTitleRef, { x: -50, opacity: 0 })
-  //           .to(skillsBoxRef, { y: 100, opacity: 0 }, "-=60%")
-  //           .to(
-  //               contentTitleRef,
-  //               { y: -30 , opacity: 0 },
-
-  //               "<50%"
-  //             ).to(
-  //               [descRef1, descRef2, descRef3],
-
-  //               { y: 0, opacity: 0, duration: 0.5, stagger: 0.25 },
-  //               "<50%"
-  //             );
-  //       },
-
-  //     },
-  //   });
-
-  // });
+  useEffect(() => {
+    console.log(animationTrigger);
+    setAnimationTrigger(windowSize.width <= 768 ? "20% center" : "35% center");
+    console.log(accordionRef.current);
+  }, [windowSize]);
+  useEffect(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: animationTrigger,
+      },
+    });
+    tl.fromTo(
+      sectionTitleRef.current,
+      { x: -50 },
+      { x: 0, opacity: 1, duration: 0.8, delay: 0 }
+    )
+      .fromTo(
+        skillsBoxRef.current,
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        "-=60%"
+      )
+      .from(
+        accordionRef.current,
+        { y: 50, alpha: 0, duration: 0.8, stagger: 0.4 },
+        "-=60%"
+      )
+      .fromTo(
+        contentTitleRef.current,
+        { y: -30 },
+        { y: 0, opacity: 1, duration: 0.6 },
+        "<50%"
+      )
+      .fromTo(
+        [descRef1, descRef2, descRef3],
+        { y: 30 },
+        { y: 0, opacity: 1, duration: 0.5, stagger: 0.25 },
+        "<50%"
+      );
+  }, []);
 
   return (
-    <section className='about' id='about' ref={(el) => (sectionRef = el)}>
+    <section className='about' id='about' ref={sectionRef}>
       <div className='about__left'>
-        <h2 className='about__left--title' ref={(el) => (sectionTitleRef = el)}>
+        <h2 className='about__left--title' ref={sectionTitleRef}>
           About Me
         </h2>
-        <div className='about__left__skills' ref={(el) => (skillsBoxRef = el)}>
+        <div className='about__left__skills' ref={skillsBoxRef}>
           <div className='about__left__skills--title'>
             <h3>Technologies I working with </h3>
           </div>
@@ -97,14 +93,13 @@ const About = () => {
               key={idx}
               onToggle={toggleAccordio}
               selectedAccrodion={selectedAccrodion}
+              reffer={addAccordionToRef}
             />
           ))}
         </div>
       </div>
       <div className='about__right'>
-        <h2
-          className='about__right--title'
-          ref={(el) => (contentTitleRef = el)}>
+        <h2 className='about__right--title' ref={contentTitleRef}>
           Learn a little bit about me...
         </h2>
         <div className='about__right__content'>
