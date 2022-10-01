@@ -17,8 +17,7 @@
   border-bottom-right-radius: 8px;
   z-index: 999;
   opacity: 0;
-
-  
+  box-shadow: var(--box-shadow);
 
   &__brand {
     margin: 0;
@@ -31,7 +30,7 @@
   &__main {
     width: 100%;
     position: absolute;
-    left: 0;
+    left: -1px;
     top: 4rem;
     transform: translateX(101%);
 
@@ -51,7 +50,7 @@
       align-items: center;
 
       background-color: var(--color-white);
-      gap: 2rem;
+      // gap: 2rem;
       pointer-events: auto;
     }
   }
@@ -79,8 +78,16 @@
     }
 
     @include mediaQuery.breakpoint(md) {
+      width: 100%;
       background-color: transparent;
       cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      &.current {
+        background-color: rgba(0, 0, 0, 0.1);
+        & .navbar__list--link {
+          color: var(--color-blue);
+        }
+      }
     }
 
     &--link {
@@ -107,15 +114,15 @@
         &:hover {
           color: var(--color-blue);
         }
-        &::before{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -2rem;
-            height: 100%;
-            width: 2px;
-            background-color: rgba(0, 0, 0, 0.1);
-        }
+        // &::before {
+        //   content: "";
+        //   position: absolute;
+        //   top: 0;
+        //   left: -2rem;
+        //   height: 100%;
+        //   width: 2px;
+        //   background-color: rgba(0, 0, 0, 0.1);
+        // }
       }
       span {
         display: block;

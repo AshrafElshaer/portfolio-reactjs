@@ -3,7 +3,7 @@ import emailjs from "emailjs-com";
 
 import { IoIosSend } from "react-icons/io";
 import { BsCheckLg } from "react-icons/bs";
-import ScrollIcon from "../../components/scrollIcon/ScrollIcon";
+// import ScrollIcon from "../../components/scrollIcon/ScrollIcon";
 
 import { gsap } from "gsap/all";
 import { ScrollTrigger } from "gsap/all";
@@ -13,7 +13,7 @@ const ContactMe = () => {
   let sectionRef = useRef(null);
   let titleRef = useRef(null);
   let subTitleRef = useRef(null);
-  let iconRef = useRef(null);
+  // let iconRef = useRef(null);
   let formRef = useRef(null);
   let nameRef = useRef(null);
   let emailRef = useRef(null);
@@ -70,25 +70,25 @@ const ContactMe = () => {
         start: "7% center",
       },
     });
-    tl
-            .fromTo(
-              titleRef,
-              { y: -20 },
-              { y: 0, opacity: 1, duration: 0.8, delay: 0.2 }
-            )
-            .fromTo(
-              [subTitleRef, iconRef],
-              { y: 20 },
-              { y: 0, opacity: 1, stagger: 0.3 }
-            ).to(
-              formRef, 
-              {opacity : 1, duration : 0.4  }
-            )
-            .fromTo(
-              [nameRef,emailRef,subjectRef,messageRef,btnRef], 
-              { x : -150 },
-              { x : 0 , opacity : 1, duration : 1 , stagger: 0.3 }
-            )
+    // tl
+    //         .fromTo(
+    //           titleRef,
+    //           { y: -20 },
+    //           { y: 0, opacity: 1, duration: 0.8, delay: 0.2 }
+    //         )
+    //         .fromTo(
+    //           [subTitleRef, iconRef],
+    //           { y: 20 },
+    //           { y: 0, opacity: 1, stagger: 0.3 }
+    //         ).to(
+    //           formRef, 
+    //           {opacity : 1, duration : 0.4  }
+    //         )
+    //         .fromTo(
+    //           [nameRef,emailRef,subjectRef,messageRef,btnRef], 
+    //           { x : -150 },
+    //           { x : 0 , opacity : 1, duration : 1 , stagger: 0.3 }
+    //         )
 
    
   }, []);
@@ -104,7 +104,7 @@ const ContactMe = () => {
           ref={(el) => (subTitleRef = el)}>
           Let's get in touch .
         </h3>
-        <ScrollIcon forwardRef={(el) => (iconRef = el)} />
+        {/* <ScrollIcon forwardRef={(el) => (iconRef = el)} /> */}
       </div>
       <div className='contact__me' ref={(el) => (formRef = el)}>
         <form className='contact__me__form' onSubmit={submitMessage}>

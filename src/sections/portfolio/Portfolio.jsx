@@ -1,5 +1,5 @@
 import ProjectShowCase from "../../components/projectShowCase/ProjectShowCase";
-import Images from "../../images/index.js";
+import Images from "../../assets/images";
 
 import { useRef , useEffect } from "react";
 import gsap from "gsap";

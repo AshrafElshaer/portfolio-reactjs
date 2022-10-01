@@ -1,6 +1,8 @@
-const Button = ({ link , text , icon }) => {
+const Button = ({ link , text , icon , btnType}) => {
+
+ 
   return (
-    <a className='btn' href={link} target="_blank" rel="noopener noreferrer" aria-label={text} >
+    <a className={`btn ${btnType}`} href={link} target="_blank" rel="noopener noreferrer" aria-label={text} >
         {icon}
         {text}
         <span></span>

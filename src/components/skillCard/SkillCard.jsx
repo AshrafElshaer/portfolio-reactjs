@@ -1,10 +1,13 @@
 import React from "react";
 
-const SkillCard = ({ icon, title }) => {
+const SkillCard = ({ obj }) => {
+  const { icon, name, color } = obj;
   return (
-    <div className='about__skills__item'>
-      <div className='about__skills__item--icon'>{icon}</div>
-      <p className='about__skills__item--title'>{title}</p>
+    <div className='skillCard'>
+      <div className='skillCard--icon' style={{ color: `${color}` }}>
+        {icon}
+      </div>
+      <p className='skillCard--title'>{name}</p>
     </div>
   );
 };
