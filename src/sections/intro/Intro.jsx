@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { Power3, gsap } from "gsap";
 import { introTitle, socialMediaLinks } from "../../assets/constants";
-import { BsArrowDown }from 'react-icons/bs'
+import { BsArrowDown } from "react-icons/bs";
 
 const Intro = () => {
   const tl = gsap.timeline();
@@ -10,7 +10,7 @@ const Intro = () => {
   const titleRefs = useRef([]);
   const introNavRef = useRef([]);
   const circlesRef = useRef([]);
-  const scrollIconRef = useRef()
+  const scrollIconRef = useRef();
 
   const addToTitleRef = (el) => {
     if (el && !titleRefs.current.includes(el)) titleRefs.current.push(el);
@@ -57,7 +57,8 @@ const Intro = () => {
         circlesRef.current,
         { alpha: 0.3, duration: 0.4, stagger: 0.2 },
         "-=35%"
-      ).from(scrollIconRef.current, {y : 50 , alpha : 0 , duration : 0.5 })
+      )
+      .from(scrollIconRef.current, { y: 50, alpha: 0, duration: 0.5 }, "-=55%");
   }, [tl]);
 
   return (
@@ -82,7 +83,7 @@ const Intro = () => {
                 ref={addIntroNavRef}>
                 <a
                   href={link.path}
-                  rrel='noreferrer noopener'
+                  rel='noreferrer noopener'
                   className='intro__nav__item--link'>
                   {link.title}
                 </a>

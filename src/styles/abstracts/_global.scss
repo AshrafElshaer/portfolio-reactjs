@@ -29,11 +29,15 @@ header,
 section,
 footer {
   max-width: 87.5rem; //1100 PX
-  margin-inline: auto;
   padding-inline: 1rem;
   @include mediaQuery.breakpoint(md) {
     padding-inline: 2rem;
   }
+}
+header,
+section,
+footer {
+  margin-inline: auto;
 }
 header,
 section {
@@ -43,7 +47,6 @@ section {
 header {
   padding-top: 7rem;
 }
-
 
 h1,
 h2,

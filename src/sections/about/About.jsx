@@ -35,9 +35,7 @@ const About = () => {
   };
 
   useEffect(() => {
-    console.log(animationTrigger);
     setAnimationTrigger(windowSize.width <= 768 ? "20% center" : "35% center");
-    console.log(accordionRef.current);
   }, [windowSize]);
   useEffect(() => {
     const tl = gsap.timeline({
