@@ -32,7 +32,6 @@ const ProjectShowCase = ({ project }) => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: windowSize.width <= 768 ? "top 20%" : "center 70%",
-        markers: true,
       },
     });
     tl.fromTo(

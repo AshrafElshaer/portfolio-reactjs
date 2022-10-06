@@ -1,9 +1,56 @@
-
+@use "../../styles/abstracts/breakpoints" as mediaQuery;
 .contact {
   position: relative;
-  overflow: hidden;
+  padding-top: 15rem;
   background-color: var(--color-white);
 
-  
-}
+  &__subtitle {
+    color: var(--color-blue);
+    font-size: clamp(1.5rem, 0.8rem + 3vw, 3rem);
+    margin-bottom: 2rem;
+  }
+  div:first-of-type {
+    @include mediaQuery.breakpoint(md) {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    a:last-of-type {
+      margin-inline: auto;
+      width: 15rem;
+      
+      @include mediaQuery.breakpoint(md){
+        margin-inline: 0;
+      }
+    }
+  }
 
+  &__nav {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    &__item {
+      @include mediaQuery.breakpoint(md) {
+        display: inline-block;
+        margin-right: 0.75rem;
+      }
+      &--link {
+        color: var(--color-light-dark);
+        font-size: 1.2rem;
+        font-family: var(--font-header);
+        transition: color 0.2s ease-in-out;
+        &:hover,
+        &:active {
+          color: var(--color-dark);
+        }
+      }
+    }
+  }
+  .copyRight{
+    text-align: center;
+    margin-block: 2rem;
+    span{
+      color: var(--color-blue);
+    }
+  }
+}

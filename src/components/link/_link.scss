@@ -55,6 +55,9 @@
   &.primary {
     color: var(--color-white);
     background-color: var(--color-blue);
+    &:hover{
+      opacity: 0.8;
+    }
   }
   &.outline {
     color: var(--color-blue);

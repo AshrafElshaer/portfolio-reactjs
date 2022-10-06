@@ -83,7 +83,7 @@ const Intro = () => {
                 ref={addIntroNavRef}>
                 <a
                   href={link.path}
-                  rrel='noreferrer noopener'
+                  rel='noreferrer noopener'
                   className='intro__nav__item--link'>
                   {link.title}
                 </a>
