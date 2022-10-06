@@ -22,12 +22,12 @@ const ContactMe = () => {
       <h2 className='contact__title'>Get In Touch </h2>
       <h1 className='contact__subtitle'>
         I love to hear from you. Whether you have a question or just want to
-        chat about design, tech & art — shoot me a message.{" "}
+        chat about tech — shoot me a message.
       </h1>
       <div>
         <nav className='contact__nav'>
           <ul>
-            <li><h3>Social</h3></li>
+            <li><h3>Reach me on !</h3></li>
             {socialMediaLinks.map((link) => {
               return (
                 <li
@@ -45,6 +45,7 @@ const ContactMe = () => {
             })}
           </ul>
         </nav>
+        <p> Or </p>
         <Link
           text='Say Hello !'
           btnType='primary'
@@ -52,7 +53,7 @@ const ContactMe = () => {
         />
       </div>
       <div className="copyRight">
-      Copyright © 2022  <span>Ashraf Elshaer</span>  - All Rights Reserved.
+      Copyright © 2022  <strong>Ashraf Elshaer</strong>  - All Rights Reserved.
       </div>
     </footer>
   );

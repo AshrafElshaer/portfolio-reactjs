@@ -31,7 +31,7 @@ const ProjectShowCase = ({ project }) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: windowSize.width <= 768 ? "top 20%" : "center 70%",
+        start: windowSize.width <= 768 ? "top 20%" : "center 60%",
       },
     });
     tl.fromTo(

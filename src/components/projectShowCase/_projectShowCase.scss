@@ -59,6 +59,7 @@
 
 
   @include mediaQuery.breakpoint(md) {
+    padding-left: 2rem;
     flex-direction: row;
     gap: 5rem;
     margin-top: none;

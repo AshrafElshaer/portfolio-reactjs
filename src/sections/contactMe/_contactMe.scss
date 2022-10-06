@@ -1,15 +1,16 @@
 @use "../../styles/abstracts/breakpoints" as mediaQuery;
 .contact {
   position: relative;
-  padding-top: 15rem;
+  padding-top: 7rem;
   background-color: var(--color-white);
 
   &__subtitle {
     color: var(--color-blue);
     font-size: clamp(1.5rem, 0.8rem + 3vw, 3rem);
-    margin-bottom: 2rem;
+    
   }
   div:first-of-type {
+    margin-block: 7rem;
     @include mediaQuery.breakpoint(md) {
       display: flex;
       justify-content: space-evenly;
@@ -23,13 +24,18 @@
         margin-inline: 0;
       }
     }
+    p{
+      text-align: center;
+      margin-block: 2rem;
+    }
   }
 
   &__nav {
     text-align: center;
-    margin-bottom: 2rem;
+    
 
     &__item {
+      margin-block: 0.75rem;
       @include mediaQuery.breakpoint(md) {
         display: inline-block;
         margin-right: 0.75rem;
@@ -48,8 +54,9 @@
   }
   .copyRight{
     text-align: center;
-    margin-block: 2rem;
-    span{
+    
+    margin-bottom:  1rem;
+    strong{
       color: var(--color-blue);
     }
   }
