@@ -1,14 +1,12 @@
-const Images = {
-    amore1: require('./amore1.png'),
-    amore2: require('./amore2.png'),
+
+const IMAGES = {
+    amoreDesktop: require('./amore-desktop.png'),
+    amoreMobil: require('./amore-mobile.png'),
+    invoiceDesktop :require('./invoice-desktop.png'),
+    invoiceMobile :require('./invoice-mobile.png'),
     clockApp1: require('./clock-app1.png'),
-    clockApp2: require('./clock-app2.png'),
-    clockApp3: require('./clock-app3.png'),
-    clockApp4: require('./clock-app4.png'),
-    todoApp1: require('./todo-app1.png'),
-    todoApp2: require('./todo-app2.png'),
-    todoApp3: require('./todo-app3.png'),
-    
+    clockApp2: require('./clock-app2.png'), 
 }
 
-export default Images
+export default IMAGES
+// /Users/ashrafelshaer/Desktop/portfolio-reactjs/src/assets/images/invoice-mobile.png

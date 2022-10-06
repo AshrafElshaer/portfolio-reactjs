@@ -36,7 +36,7 @@
 }
 
 .btn {
-  font-size: 1rem;
+  font-size: 1.2rem;
   position: relative;
   text-align: center;
   width: fit-content;
@@ -45,23 +45,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0.25rem;
   cursor: pointer;
 
   svg {
     margin-right: 1rem;
     color: currentColor;
   }
+  &.primary {
+    color: var(--color-white);
+    background-color: var(--color-blue);
+  }
   &.outline {
-    position: relative;
     color: var(--color-blue);
     font-size: 1.2rem;
     border-radius: 0.25rem;
-    transition: color , background-color 0.3s ease-in-out;
+    transition: color, background-color 0.3s ease-in-out;
     overflow: hidden;
-    &:hover{
-      background-color: var(--color-blue);
-      color: var(--color-white);
-    }
+    
     &:visited {
       color: var(--color-blue);
     }

@@ -8,7 +8,7 @@ import {
   DiGithubBadge,
 } from "react-icons/di";
 import { ReactComponent as Gsap } from "../gsap-greensock.svg";
-import IMAGES from '../images/index'
+import IMAGES from "../images/index";
 
 export const navbarLinks = [
   {
@@ -126,26 +126,36 @@ export const aboutMe = {
 };
 
 export const projects = [
-  
   {
-    title: "Clock App",
-    subTitle: "A fully function clock app provide Worldwide local Time  , CRUD alarms , timer , stop watch  .",
-    // images: [Images.clockApp1,Images.clockApp2,Images.clockApp3,Images.clockApp4],
-    github: "https://github.com/AshrafElshaer/clock-app",
-    live: "https://ashrafelshaer.github.io/clock-app/",
-  },
-  {
-    title: "Todo app",
-    subTitle: "add , edit , delete , check & uncheck todos .",
-    // images: [Images.todoApp1, Images.todoApp2,Images.todoApp3],
-    github: "https://github.com/AshrafElshaer/todo-app",
-    live: "https://ashrafelshaer.github.io/todo-app/",
-  },
-  {
-    title: "amore hookah & cafe landing page",
-    subTitle: "a landing page for a local hookah & coffee lounge. ( React Js , SCSS) ",
-    // images: [Images.amore1, Images.amore2],
+    title: "Amore Lounge & Caffee ",
+    subTitle: "Landing page for a local smoke & coffee lounge.",
+    techStack: ["React Js", "SASS/SCSS"],
+    images: [IMAGES.amoreDesktop, IMAGES.amoreMobil],
     github: "https://github.com/AshrafElshaer/amore-lounge-reactJS",
     live: "https://ashrafelshaer.github.io/amore-lounge-reactJS/",
+  },
+  {
+    title: "Invocice App ",
+    subTitle:
+      "Full stack app to create / update / delete Invoice mainly focued on front end technologies",
+    techStack: [
+      "React Js",
+      "Redux toolkit",
+      "Firebase authentication",
+      "Styled components",
+    ],
+    images: [IMAGES.invoiceDesktop, IMAGES.invoiceMobile],
+    github: "https://github.com/AshrafElshaer/invoice-app-redux",
+    live: "https://curious-meringue-78ffd1.netlify.app/",
+  },
+
+  {
+    title: "Clock App",
+    subTitle:
+      "A clock app that provide's Worldwide local Time  , CRUD alarms , timer and stop watch  .",
+    techStack: ["HTML / CSS", "JavaScript"],
+    images: [IMAGES.clockApp1, IMAGES.clockApp2],
+    github: "https://github.com/AshrafElshaer/clock-app",
+    live: "https://ashrafelshaer.github.io/clock-app/",
   },
 ];
