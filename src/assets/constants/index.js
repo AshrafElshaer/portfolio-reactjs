@@ -127,17 +127,9 @@ export const aboutMe = {
 
 export const projects = [
   {
-    title: "Amore Lounge & Caffee ",
-    subTitle: "Landing page for a local smoke & coffee lounge.",
-    techStack: ["React Js", "SASS/SCSS"],
-    images: [IMAGES.amoreDesktop, IMAGES.amoreMobil],
-    github: "https://github.com/AshrafElshaer/amore-lounge-reactJS",
-    live: "https://ashrafelshaer.github.io/amore-lounge-reactJS/",
-  },
-  {
     title: "Invocice App ",
     subTitle:
-      "Full stack app to create / update / delete Invoice mainly focued on front end technologies",
+      "Full stack app to create / update / delete Invoices mainly focued on front end technologies",
     techStack: [
       "React Js",
       "Redux toolkit",
@@ -148,11 +140,20 @@ export const projects = [
     github: "https://github.com/AshrafElshaer/invoice-app-redux",
     live: "https://curious-meringue-78ffd1.netlify.app/",
   },
+  
+  {
+    title: "Amore Lounge & Caffee ",
+    subTitle: "Landing page for a local smoke & coffee lounge.",
+    techStack: ["React Js", "SASS/SCSS"],
+    images: [IMAGES.amoreDesktop, IMAGES.amoreMobil],
+    github: "https://github.com/AshrafElshaer/amore-lounge-reactJS",
+    live: "https://ashrafelshaer.github.io/amore-lounge-reactJS/",
+  },
 
   {
     title: "Clock App",
     subTitle:
-      "A clock app that provide's Worldwide local Time  , CRUD alarms , timer and stop watch  .",
+      "A clock app that provide's Worldwide local Time ,  alarms , timer and stop watch  .",
     techStack: ["HTML / CSS", "JavaScript"],
     images: [IMAGES.clockApp1, IMAGES.clockApp2],
     github: "https://github.com/AshrafElshaer/clock-app",

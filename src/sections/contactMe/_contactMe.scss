@@ -35,6 +35,7 @@
     
 
     &__item {
+      text-align: center;
       margin-block: 0.75rem;
       @include mediaQuery.breakpoint(md) {
         display: inline-block;
