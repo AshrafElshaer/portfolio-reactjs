@@ -84,7 +84,8 @@ const Intro = () => {
                 <a
                   href={link.path}
                   rel='noreferrer noopener'
-                  className='intro__nav__item--link'>
+                  className='intro__nav__item--link'
+                  target='_blank'>
                   {link.title}
                 </a>
               </li>
