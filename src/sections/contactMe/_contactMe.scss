@@ -1,7 +1,7 @@
 @use "../../styles/abstracts/breakpoints" as mediaQuery;
 .contact {
   position: relative;
-  padding-top: 7rem;
+  padding-top: 12rem;
   background-color: var(--color-white);
 
   &__subtitle {
@@ -19,6 +19,7 @@
     a:last-of-type {
       margin-inline: auto;
       width: 15rem;
+      font-family: var(--font-header);
       
       @include mediaQuery.breakpoint(md){
         margin-inline: 0;
@@ -27,6 +28,7 @@
     p{
       text-align: center;
       margin-block: 2rem;
+      font-family: var(--font-header);
     }
   }
 

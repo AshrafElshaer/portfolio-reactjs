@@ -53,7 +53,8 @@ const ContactMe = () => {
                   <a
                     href={link.path}
                     rel='noreferrer noopener'
-                    className='contact__nav__item--link'>
+                    className='contact__nav__item--link'
+                    target='_blank'>
                     {link.title}
                   </a>
                 </li>

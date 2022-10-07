@@ -38,21 +38,21 @@ export const introTitle = [
 export const socialMediaLinks = [
   {
     title: "LinkedIn",
-    path: "",
+    path: "https://www.linkedin.com/in/ashrafelshaer/",
   },
   {
     title: "GitHub",
-    path: "",
+    path: "https://github.com/AshrafElshaer",
   },
   {
-    title: "Twitter",
-    path: "",
+    title: "Instagram",
+    path: "https://www.instagram.com/ashraf.elsha3er/",
   },
 ];
 
 export const technologies = [
   {
-    title: "language's",
+    title: "languages",
     skills: [
       {
         icon: <DiJavascript1 />,
@@ -114,10 +114,10 @@ export const technologies = [
 
 export const aboutMe = {
   about:
-    "My friend's call me Ash , a self-taught junior web developer focused on creating interactive digital experiences on the web.",
+    "My friend's call me Ash , a self-taught junior web developer focused on creating interactive digital experiences on the web. eager to secure entry-level frontend developer position. Ready to learn more and help team achieve company goals.",
   mission: {
     title: " Mission",
-    text: "To empower our clients to use the web to its full potential by providing affordable, effective, custom solutions.",
+    text: "To empower web clients to use the web to its full potential by providing affordable, effective, custom solutions.",
   },
   vision: {
     title: " Vision",
@@ -140,10 +140,10 @@ export const projects = [
     github: "https://github.com/AshrafElshaer/invoice-app-redux",
     live: "https://curious-meringue-78ffd1.netlify.app/",
   },
-  
+
   {
     title: "Amore Lounge & Caffee ",
-    subTitle: "Landing page for a local smoke & coffee lounge.",
+    subTitle: "Static landing page for a local lounge & caffe.",
     techStack: ["React Js", "SASS/SCSS"],
     images: [IMAGES.amoreDesktop, IMAGES.amoreMobil],
     github: "https://github.com/AshrafElshaer/amore-lounge-reactJS",
