@@ -45,8 +45,8 @@ export const socialMediaLinks = [
     path: "https://github.com/AshrafElshaer",
   },
   {
-    title: "Instagram",
-    path: "https://www.instagram.com/ashraf.elsha3er/",
+    title: "Twitter",
+    path: "https://twitter.com/AshrafElshaer98",
   },
 ];
 
